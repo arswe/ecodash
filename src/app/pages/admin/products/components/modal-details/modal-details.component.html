@@ -1,0 +1,124 @@
+<h2 mat-dialog-title class="mat__modal--title">{{ data.title }}</h2>
+<mat-dialog-content class="mat__dialog--content-product">
+  <form
+    [formGroup]="productForm"
+    [ngClass]="{ 'form-loading': isLoading() }"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="grid__container">
+      <div class="grid__col w-full">
+        <mat-form-field class="w-full">
+          <mat-label>title</mat-label>
+          <input matInput placeholder="Name do produto" name="title" formControlName="title" />
+        </mat-form-field>
+      </div>
+
+      <div class="grid__col w-full">
+        <mat-form-field class="w-full">
+          <mat-label>description</mat-label>
+          <textarea
+            matInput
+            placeholder="description do produto"
+            name="description"
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="grid__col">
+        <mat-form-field class="w-full">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name da Name" name="brand" formControlName="brand" />
+        </mat-form-field>
+      </div>
+
+      <div class="grid__col">
+        <mat-form-field class="w-full">
+          <mat-label>Categories</mat-label>
+          <mat-select name="category" formControlName="category">
+            @for (category of allCategories(); track category) {
+            <mat-option [value]="category">{{ category }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="grid__col">
+        <mat-form-field class="w-full">
+          <mat-label>Price</mat-label>
+          <input
+            matInput
+            placeholder="Valor do produto"
+            name="price"
+            formControlName="price"
+            mask="separator.2"
+            [thousandSeparator]="'.'"
+            [decimalMarker]="','"
+            prefix="R$ "
+            [dropSpecialCharacters]="true"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="grid__col">
+        <mat-form-field class="w-full">
+          <mat-label>Discount</mat-label>
+          <input
+            matInput
+            placeholder="Discount aplicado"
+            name="discountPercentage"
+            formControlName="discountPercentage"
+            mask="percentage"
+            suffix="%"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="grid__col">
+        <mat-form-field class="w-full">
+          <mat-label>rating</mat-label>
+          <input
+            matInput
+            placeholder="Avaiação do produto"
+            name="rating"
+            formControlName="rating"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="grid__col">
+        <mat-form-field class="w-full">
+          <mat-label>stock</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Quantidade em stock"
+            name="stock"
+            formControlName="stock"
+          />
+        </mat-form-field>
+      </div>
+
+      @if (data.product?.images) {
+      <div class="grid__col w-full">
+        <div class="wrap">
+          <h3 class="mat__modal--subtitle">Photos</h3>
+          <ul class="list__thumbnail">
+            @for (image of data.product?.images; track image) {
+            <li>
+              <img [src]="image" class="thumbnail__image" alt="" />
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+
+      <div class="grid__col w-full">
+        <div class="mat__button--send">
+          <button mat-flat-button color="primary" class="w-full" type="submit">save</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>

@@ -1,0 +1,108 @@
+<section class="section__page--container">
+  <div class="grid__container">
+    <div class="grid__col">
+      <mat-card class="mat__card--profile">
+        <mat-card-header class="mat__card--profile-header">Update Profile</mat-card-header>
+        <mat-card-content class="mat__card--profile-content">
+          <form [formGroup]="userForm">
+            <legend>Account information</legend>
+            <div class="grid__container">
+              <div class="grid__col c-2">
+                <mat-form-field class="w-full">
+                  <mat-label>username</mat-label>
+                  <input
+                    matInput
+                    formControlName="username"
+                    name="username"
+                    placeholder="Enter your username"
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="grid__col c-3">
+                <mat-form-field class="w-full">
+                  <mat-label>E-mail</mat-label>
+                  <input
+                    matInput
+                    formControlName="email"
+                    name="email"
+                    placeholder="Enter your email"
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="grid__col c-2">
+                <mat-form-field class="w-full">
+                  <mat-label>firstName</mat-label>
+                  <input
+                    matInput
+                    formControlName="firstName"
+                    name="firstName"
+                    placeholder="Enter firstName"
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="grid__col c-3">
+                <mat-form-field class="w-full">
+                  <mat-label>lastName</mat-label>
+                  <input
+                    matInput
+                    formControlName="lastName"
+                    name="lastName"
+                    placeholder="Enter lastName"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <mat-divider class="mat__divider" />
+            <legend>address information</legend>
+            <div class="grid__container">
+              <div class="grid__col w-full">
+                <mat-form-field class="w-full">
+                  <mat-label>address</mat-label>
+                  <input
+                    matInput
+                    formControlName="address"
+                    name="address"
+                    placeholder="Enter address"
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="grid__col c-2">
+                <mat-form-field class="w-full">
+                  <mat-label>city</mat-label>
+                  <input matInput formControlName="city" name="city" placeholder="Enter city" />
+                </mat-form-field>
+              </div>
+
+              <div class="grid__col">
+                <mat-form-field class="w-full">
+                  <mat-label>state</mat-label>
+                  <input matInput formControlName="state" name="state" placeholder="Enter state" />
+                </mat-form-field>
+              </div>
+
+              <div class="grid__col">
+                <mat-form-field class="w-full">
+                  <mat-label>postalCode</mat-label>
+                  <input
+                    matInput
+                    formControlName="postalCode"
+                    name="postalCode"
+                    placeholder="Enter postalCode"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="mat__button--send">
+              <button mat-flat-button color="primary">Save</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<div class="main__container--drawer">
+  <mat-list role="list" class="mat__drawer--list">
+    <mat-list-item role="listitem" class="mat__drawer--list-item">
+      <a routerLink="/admin/profile" routerLinkActive="active" matRipple>
+        <mat-icon>Person</mat-icon>
+        Profile Update
+      </a>
+    </mat-list-item>
+    <mat-list-item role="listitem" class="mat__drawer--list-item">
+      <a routerLink="/admin/products" routerLinkActive="active" matRipple>
+        <mat-icon>store</mat-icon>
+        Product
+      </a>
+    </mat-list-item>
+    <mat-list-item role="listitem" class="mat__drawer--list-item">
+      <a routerLink="/admin/categories" routerLinkActive="active" matRipple>
+        <mat-icon>category</mat-icon>
+        Categoriess
+      </a>
+    </mat-list-item>
+    <mat-list-item role="listitem" class="mat__drawer--list-item">
+      <a>
+        <mat-icon>settings</mat-icon>
+        settings
+      </a>
+    </mat-list-item>
+    <mat-list-item role="listitem" class="mat__drawer--list-item" (click)="onLogout()">
+      <a>
+        <mat-icon>logout</mat-icon>
+        logout
+      </a>
+    </mat-list-item>
+  </mat-list>
+</div>
